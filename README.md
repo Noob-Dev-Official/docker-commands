@@ -10,6 +10,10 @@ shows the docker containers running on the machine
 
 shows the previous/most recent container created/exited from
 
+## docker rmi <image_name>
+
+deletes the docker image
+
 ## `docker commit <container_id>`
 
 this makes an image out of it (this id can be found by doing `docker ps -l` or `docker ps`. This gives new big image id
@@ -58,6 +62,18 @@ starts a docker container while exposing port 45678 and 45679 to both inside and
 
 starts a docker container and connects to learning network (which must be created before connecting to it)
 
+## `docker run -ti -v <your_directory_you_want_to_share:/<directory_name_in_ubunut> ubuntu bash`
+
+creates a volume which will contain the data of the directory you specify
+
+## `docker run -ti --name hello -v /shared-data ubuntu bash`
+
+creates a container with volume "shared-data" with name "hello"
+
+## `docker run -ti --volumes-from hello ubuntu bash`
+
+creates a container which connects to the volume created by "hello" container
+
 ## `docker attach <docker_container_name>`
 
 this connects to the docker container running in background
@@ -94,6 +110,10 @@ shows the list of the docker network
 
 creates "catsonly" server
 
-## `docker netowork connect catsonly catserver`
+## `docker network connect catsonly catserver`
 
 creates a connection between "catsonly" server and "catserver" container
+
+## `docker build -t hello .`
+
+runs the docker file (builds it), the dot at the end says where to find the docker file to run

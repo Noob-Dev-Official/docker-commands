@@ -11,14 +11,13 @@
 # CMD ["bin/nano", "tmp/notes"]
 
 # multistage builds
-FROM my-ubuntu as builder
+FROM my-ubuntu
 RUN apt-get -y update
-RUN apt-get -y install curl
-RUN apt-get -y install nano
-RUN curl https://google.com | wc -c > google-size
+RUN apt install python3
+RUN apt install pip
+
 
 # alpine is a light weight linux OS, good for dockers
-FROM alpine
-COPY --from=builder /google-size /google-size
-ENTRYPOINT echo google is this big; cat google-size
-
+# FROM alpine
+# COPY --from=builder /google-size /google-size
+# ENTRYPOINT echo google is this big; cat google-size

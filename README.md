@@ -46,7 +46,7 @@ starts a docker container and exits after 5 seconds
 
 starts a docker container, then runs sleep command and then runs echo command which prints out
 
-## docker run -d -ti ubuntu bash
+## `docker run -d -ti ubuntu bash`
 
 starts a docker container and leaves it running in background
 
@@ -117,3 +117,19 @@ creates a connection between "catsonly" server and "catserver" container
 ## `docker build -t hello .`
 
 runs the docker file (builds it), the dot at the end says where to find the docker file to run
+
+## `docker run -d -p 5000:5000 --restart=always --name registry registry:2`
+
+this creates a registry on port 5000 which maps to port 5000 of host with name registry creating an image from registry
+
+## docker registries (one way of backing up docker images)
+
+https://docs.docker.com/registry/
+
+## `docker save -o my-images.tar.gz my-ubuntu alpine registry:2 ubuntu`
+
+this creates an archive (zip) of the images you put after specifying the name for the archive (another way of backing up docker images)
+
+## `docker load -i my-images.tar.gz`
+
+loads the images from the archive (zip) you specify

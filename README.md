@@ -133,3 +133,25 @@ this creates an archive (zip) of the images you put after specifying the name fo
 ## `docker load -i my-images.tar.gz`
 
 loads the images from the archive (zip) you specify
+
+# For docker compose
+
+## `docker compose build`
+
+builds the docker file
+
+## `docker compose up -d`
+
+runs the docker compose file in background
+
+## `docker compose -f`
+
+connects to the terminal for docker compose
+
+## `docker compose down --remove`
+
+shuts down docker compose and removes them completely
+
+## `docker ps -a`
+
+shows all the docker processes

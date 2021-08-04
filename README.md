@@ -144,11 +144,15 @@ builds the docker file
 
 runs the docker compose file in background
 
-## `docker compose -f`
+## `docker compose logs -f <container_name>`
+
+see logs in live for that container
+
+## `docker compose -f <container_name>`
 
 connects to the terminal for docker compose
 
-## `docker compose down --remove`
+## `docker compose down`
 
 shuts down docker compose and removes them completely
 

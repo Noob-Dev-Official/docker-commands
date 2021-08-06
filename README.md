@@ -159,3 +159,11 @@ shuts down docker compose and removes them completely
 ## `docker ps -a`
 
 shows all the docker processes
+
+## `docker compose build <name>`
+
+builds only that particular container with <name\> defined in docker compose
+
+## `docker compose --force-recreate --no-deps <name> -d`
+
+restarts that particular container detached with <name\>
